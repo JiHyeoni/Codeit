@@ -1,0 +1,9 @@
+@font-face {
+  src: url("fonts/BMJUA_ttf.ttf");
+  font-family: "Jua";
+}
+
+h2{
+  font-family: "Jua";
+  text-align: center;
+}

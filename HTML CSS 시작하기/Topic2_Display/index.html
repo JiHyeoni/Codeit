@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>display</title>
+    <meta charset="utf-8">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+      body{
+        font: size 38px;
+      }
+      i{
+        display: block; /*강제로 block으로 바꾸기*/
+      }
+      .test{
+        display: inline-block;
+        width: 300px;
+        height: 30px;
+        /*inline요소는 가로세로의 길이 개념이 없기 때문에
+        강제로 block으로 바꿔줘야 함*/
+      }
+      /*div{
+        width:300px;
+        height: 50px; 
+        block 사이즈 지정해주기
+      }*/
+
+    </style>
+  </head>
+  <body>
+    Hello my <i>name</i> is young! <!-- i,span,b 등은 inline 속성, div,p등은 block속성-->
+    Hello my <i class="test">name</i> is young!
+    <div> Hello World! </div>
+    <div>My name is young!</div>
+    <a href="https://google.com" target="_blank"><img src="../intro/images/HP1_RupertGrint_1920x1080.jpg" width="200px"></a>
+    <a class="google-link" href="https://google.com" target="_blank">
+      <img src="../intro/images/HP1_RupertGrint_1920x1080.jpg" width="200px">
+      <h1>구글</h1>
+      <p>이걸 누르면 구글로 갑니다!</p>
+    </a>
+
+    <div class="container">
+      x
+      <span class="alex">alex</span>
+      <span class="ben">ben</span>
+      <sapn class="chris">chris</sapn>
+    </div>
+  
+  </body>
+</html>
