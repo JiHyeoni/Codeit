@@ -29,16 +29,62 @@ console.log(cowsay.say({
 */
 
 
+// 비동기 프로그래밍과 콜백
+/*
 const fs=require('fs');
 
 console.log('Start');
+* /
 
 /*
 let content=fs.readFileSync('./new','utf8'); //동기실행함수
 console.log(content);
 */
-
+/*
 fs.readFile('./new','utf8',(error,data)=>{ //비동기실행함수-> node.js는 보통 비동기 실행 함수 사용
   console.log(data);
 })
 console.log('Finish');
+*/
+
+//비동기 프로그래밍과 이벤트
+/*
+const EventEmitter=require('events'); //코어모듈->클래스 하나를 외부에 공개
+const myEmitter=new EventEmitter();
+const myEmitter2=new EventEmitter();
+
+myEmitter.on('test',()=>{ //on -> 어떤 이벤트가 발생했을 때 실행할 콜백을 등록할 함수
+  console.log('Success!');
+});
+myEmitter.on('test',()=>{
+  console.log('1');
+});
+myEmitter.on('test',()=>{
+  console.log('2');
+});
+myEmitter2.on('test',()=>{
+  console.log('3');
+});
+//하나의 이벤트에 관해 여러개의 콜백 등록 가능
+//이벤트 설정과 콜백 실행은 하나의 이벤트 에미터 객체 안에서만 실행
+
+myEmitter.emit('test'); //emit -> 이벤트를 발생시키는 함수
+*/
+
+//이벤트에 추가 정보 함께 전달하기
+const EventEmitter=require('events'); 
+const myEmitter=new EventEmitter();
+
+myEmitter.on('test',(arg1,arg2)=>{
+  console.log('Success!');
+  console.log(arg1);
+  console.log(arg2);
+})
+
+myEmitter.emit('test','apple','banana','pear');
+
+const obj={type:'text',data:'Hello Codeit',date:'2021-07-22'};
+myEmitter.on('test1',(info)=>{
+  console.log(info);
+});
+myEmitter.emit('test1',obj);
