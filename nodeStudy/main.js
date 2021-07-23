@@ -71,6 +71,7 @@ myEmitter2.on('test',()=>{
 myEmitter.emit('test'); //emit -> 이벤트를 발생시키는 함수
 */
 
+/*
 //이벤트에 추가 정보 함께 전달하기
 const EventEmitter=require('events'); 
 const myEmitter=new EventEmitter();
@@ -88,3 +89,20 @@ myEmitter.on('test1',(info)=>{
   console.log(info);
 });
 myEmitter.emit('test1',obj);
+*/
+
+
+//웹 서버 만들기
+const http=require('http');
+
+let server=http.createServer(function(request,response){
+  response.end('<h1>Hello wolrd!</h1>');
+});
+server.listen(3000);//외부로부터 오는 클라이언트의 요청을 받아들일 준비(포트번호 3000)
+
+let url=new URL('http://example.com/business/mart/item?category=14&id=2965');
+console.log(url.protocol);
+console.log(url.host);
+console.log(url.pathname);
+console.log(url.search);
+
