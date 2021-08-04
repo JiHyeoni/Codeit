@@ -142,7 +142,7 @@ const http = require('http'); // etc
 const express=require('express');
 const app=express();
 
-const users = ['Tom', 'Andy', 'Jessica', 'Paul'];
+const users = ['Tom', 'Andy', 'Jessica', 'Paul','Codeit'];
 
 app.get('/',(request,response)=>{
   response.end(`<h1>Welcome!</h1>`);
