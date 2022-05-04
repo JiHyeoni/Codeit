@@ -81,7 +81,7 @@ console.log(Number('10')+Number('5'));
 console.log(String(10)+String(5));
 
 
-//typeof 연산자
+//typeof 연산자 -> 데이터 타입 확인
 console.log(typeof ('Hello'+'Codeit'));
 console.log(typeof (8-3));
 
